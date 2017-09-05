@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON Data To HTML Table - jQuery Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans+Condensed:300|Open+Sans:300"
+          rel="stylesheet">
+    <script src="jQuery-3.2.1.min.js"></script>
+    <script src="../JSON-to-Table.min.1.0.0.js"></script>
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #08090d;
+            text-align: center;
+        }
+
+        h1 span {
+            font-size: 25px;
+            color: #477dd7;
+        }
+
+        h2 {
+            font-family: "Open Sans Condensed", sans-serif;
+            font-size: 18px;
+        }
+
+        .margin-bottom {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>JSON Data To HTML Table - <span>An Example of Lightweight jQuery Plugin for Beginners</span></h1>
+<h2>External JSON data file Example</h2>
+<div class="table margin-bottom"></div>
+<h2>JSON Object variable Example</h2>
+<div id="table-2" class="margin-bottom"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON("sample-data.json", function (data) {
+            $('.table').createTable(data, {
+                // General Style for Table
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: '#DDDDDD',
+                fontFamily: 'Verdana, Helvetica, Arial, FreeSans, sans-serif',
+
+                // Table Header Style
+                thBg: '#F3F3F3',
+                thColor: '#0E0E0E',
+                thHeight: '30px',
+                thFontFamily: '"Open Sans Condensed", sans-serif',
+                thFontSize: '14px',
+                thTextTransform: 'capitalize',
+
+                // Table Body/Row Style
+                trBg: '#FFFFFF',
+                trColor: '#0E0E0E',
+                trHeight: '25px',
+                trFontFamily: '"Open Sans", sans-serif',
+                trFontSize: '13px',
+
+                // Table Body's Column Style
+                tdPaddingLeft: '10px',
+                tdPaddingRight: '10px'
+            });
+        });
+        var data = [{
+            "id": 1,
+            "first_name": "Alli",
+            "last_name": "Cassey",
+            "email": "acassey0@list-manage.com",
+            "gender": "Female",
+            "ip_address": "129.82.128.62"
+        }, {
+            "id": 2,
+            "first_name": "Clyde",
+            "last_name": "Bromage",
+            "email": "cbromage1@bbb.org",
+            "gender": "Male",
+            "ip_address": "232.45.125.179"
+        }, {
+            "id": 3,
+            "first_name": "Janeczka",
+            "last_name": "Trett",
+            "email": "jtrett2@vistaprint.com",
+            "gender": "Female",
+            "ip_address": "149.4.116.82"
+        }, {
+            "id": 4,
+            "first_name": "Kristoforo",
+            "last_name": "Duplain",
+            "email": "kduplain3@vimeo.com",
+            "gender": "Male",
+            "ip_address": "137.198.100.233"
+        }, {
+            "id": 5,
+            "first_name": "Devonna",
+            "last_name": "Medeway",
+            "email": "dmedeway4@google.nl",
+            "gender": "Female",
+            "ip_address": "136.193.208.118"
+        }, {
+            "id": 6,
+            "first_name": "Kincaid",
+            "last_name": "Blagdon",
+            "email": "kblagdon5@wunderground.com",
+            "gender": "Male",
+            "ip_address": "192.198.63.72"
+        }, {
+            "id": 7,
+            "first_name": "Stella",
+            "last_name": "Parkman",
+            "email": "sparkman6@cornell.edu",
+            "gender": "Female",
+            "ip_address": "0.210.239.37"
+        }, {
+            "id": 8,
+            "first_name": "Bowie",
+            "last_name": "Concklin",
+            "email": "bconcklin7@webnode.com",
+            "gender": "Male",
+            "ip_address": "83.150.196.191"
+        }, {
+            "id": 9,
+            "first_name": "Robin",
+            "last_name": "Thickett",
+            "email": "rthickett8@boston.com",
+            "gender": "Female",
+            "ip_address": "44.251.154.187"
+        }, {
+            "id": 10,
+            "first_name": "Lanie",
+            "last_name": "Parsall",
+            "email": "lparsall9@rediff.com",
+            "gender": "Male",
+            "ip_address": "243.29.74.93"
+        }];
+        $('#table-2').createTable(data, {});
+    });
+</script>
+</body>
+</html>
