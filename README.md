@@ -3,7 +3,7 @@ JSON Data To HTML Table is Example of Lightweight jQuery Plugin for Beginners.
 Though this is not a datatable, you can modify this plugin and customize it 
 to make your own datatable. This is an example to make an HTML table with JSON data.
 
-##Download
+## Download
 You can [Download](https://github.com/shahnewazshamim/json-to-table/archive/master.zip)
 it from here.
 > `https://github.com/shahnewazshamim/json-to-table/archive/master.zip`  
@@ -11,108 +11,108 @@ it from here.
 Git Clone:
 > `https://github.com/shahnewazshamim/json-to-table.git`  
 
-##Installation
+## Installation
 Using **Production version** `JSON-to-Table.min.1.0.0.js` 
 > `<script src="jQuery-3.2.1.min.js"></script>`
 
 Or **Development version** `JSON-to-Table.1.0.0.js`
 > `<script src="JSON-to-Table.min.1.0.0.js"></script>`
 
-##How to use
+## How to use
 Just call `createTable` method in your document ready function with your json `data` object.
 
 `$('your-selector').createTable(data);`
 
-##Property Definition
+## Property Definition
 > **Every single value of these properties is similar to CSS property value.**
-- ####borderWidth
+- #### borderWidth
     Defines to control table and it's all rows and columns border width.
   
     **Ex:** `borderWidth: '1px'`
     
-- ####borderStyle
+- #### borderStyle
     Defines to control table and it's all rows and columns border style.
     
     **Ex:** `borderStyle: 'solid'`
     
-- ####borderColor
+- #### borderColor
     Defines to control table and it's all rows and columns border color.
   
     **Ex:** `borderColor: '#DDDDDD'`
     
-- ####fontFamily
+- #### fontFamily
     Defines to control table font family.
     
     **Ex:** `fontFamily: 'Verdana, Helvetica, Arial, FreeSans, sans-serif'`
 
-- ####thBg
+- #### thBg
     Defines to control table header background color.
     
     **Ex:** `thBg: '#F3F3F3'`
 
-- ####thColor
+- #### thColor
     Defines to control table header text color.
     
     **Ex:** `thColor: '#0E0E0E'`
 
-- ####thHeight
+- #### thHeight
     Defines to control table header height.
     
     **Ex:** `thHeight: '30px'`
 
-- ####thFontFamily
+- #### thFontFamily
     Defines to control table header font family.
     
     **Ex:** `thFontFamily: '"Open Sans Condensed", sans-serif'`
 
-- ####thFontSize
+- #### thFontSize
     Defines to control table header font size.
     
     **Ex:** `thFontSize: '14px'`
     
-- ####thTextTransform
+- #### thTextTransform
     Defines to control table header text style.
     
     **Ex:** `thTextTransform: 'capitalize'`
 
-- ####trBg
+- #### trBg
     Defines to control table row background color.
     
     **Ex:** `trBg: '#FFFFFF'`
 
-- ####trColor
+- #### trColor
     Defines to control table row text color.
     
     **Ex:** `thColor: '#0E0E0E'`
 
-- ####trHeight
+- #### trHeight
     Defines to control table row height.
     
     **Ex:** `thHeight: '25px'`
 
-- ####trFontFamily
+- #### trFontFamily
     Defines to control table row font family.
     
     **Ex:** `trFontFamily: '"Open Sans", sans-serif'`
 
-- ####thFontSize
+- #### thFontSize
     Defines to control table row font size.
     
     **Ex:** `thFontSize: '13px'`
 
-- ####tdPaddingLeft
+- #### tdPaddingLeft
     Defines to control table column left padding.
     
     **Ex:** `tdPaddingLeft: '10px'`
 
-- ####tdPaddingRight
+- #### tdPaddingRight
     Defines to control table column right padding.
     
     **Ex:** `tdPaddingRight: '10px'`
 
-##Examples
+## Examples
 
-#####Using a JSON data from your JS variable.
+##### Using a JSON data from your JS variable.
 ```javascript
 var data = [
              {
@@ -162,7 +162,7 @@ $(document).ready(function () {
 });
 ```
 
-#####External JSON file.
+##### External JSON file.
 ```javascript
 $(document).ready(function () {
     $.getJSON("sample-data.json", function (data) {
