@@ -3,6 +3,8 @@ JSON Data To HTML Table is Example of Lightweight jQuery Plugin for Beginners.
 Though this is not a datatable, you can modify this plugin and customize it 
 to make your own datatable. This is an example to make an HTML table with JSON data.
 
+![alt text](https://github.com/shahnewazshamim/json-to-table/blob/master/screenshot.png "JSON to HTML Table")
+
 ## Download
 You can [Download](https://github.com/shahnewazshamim/json-to-table/archive/master.zip)
 it from here.
