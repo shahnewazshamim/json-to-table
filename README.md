@@ -6,8 +6,11 @@ to make your own datatable. This is an example to make an HTML table with JSON d
 ![alt text](https://github.com/shahnewazshamim/json-to-table/blob/master/screenshot.png "JSON to HTML Table")
 
 ## Download
-You can [Download](https://github.com/shahnewazshamim/json-to-table/archive/master.zip)
-it from here.
+#### Current Version
+Version 1.0.0
+
+You can download the [latest or current stable](https://github.com/shahnewazshamim/json-to-table/releases/latest) version
+from here (***recommended***) or download it form master branch (*not recommended*). 
 > `https://github.com/shahnewazshamim/json-to-table/archive/master.zip`  
 
 Git Clone:
