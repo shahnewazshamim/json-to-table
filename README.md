@@ -18,10 +18,10 @@ Git Clone:
 
 ## Installation
 Using **Production version** `JSON-to-Table.min.1.0.0.js` 
-> `<script src="jQuery-3.2.1.min.js"></script>`
+> `<script src="JSON-to-Table.min.1.0.0.js"></script>`
 
 Or **Development version** `JSON-to-Table.1.0.0.js`
-> `<script src="JSON-to-Table.min.1.0.0.js"></script>`
+> `<script src="JSON-to-Table.1.0.0.js"></script>`
 
 ## How to use
 Just call `createTable` method in your document ready function with your json `data` object.
@@ -29,10 +29,42 @@ Just call `createTable` method in your document ready function with your json `d
 `$('your-selector').createTable(data);`
 
 ## Property Definition
-> **Every single value of these properties is similar to CSS property value.**
+- #### tableWidth
+    Defines the width of the builded table.
+    
+    **Ex:** `function(){return {value: 100, type: '%'}}`
+	
+- #### colWidth
+    You can define a function to calc each width of cell separate.
+    
+	**Def:** `null`
+    
+    **Ex:** `function(colIdx, colMax, tableWidth, showRowNumber){return {value: 25, type: '%'};}`
+	
+- #### showRowNumber
+    Maybe you would like to disable row numbers. Now you can do it.
+    
+    **Ex:** `showRowNumber: true`
+	
+- #### rowNumberStartValue
+    If you would like start with row number 9 set it. Otherwise let default as 1.
+    
+    **Ex:** `rowNumberStartValue: 1`
+	
+- #### cellTextComposer
+    Defines a function to control content of each cell.
+    
+    **Ex:** `function (colIdx, rowIdx, cellValue, isHead){return cellValue;}`
+	
+- #### rowComposer
+    Defines a function to control content of each row.
+    
+    **Ex:** `function (rowIdx, rowTxt, isHead){return rowTxt;}`
+	
+> **Every single value of the following properties is similar to CSS property value.**
 - #### borderWidth
     Defines to control table and it's all rows and columns border width.
-  
+    
     **Ex:** `borderWidth: '1px'`
     
 - #### borderStyle
