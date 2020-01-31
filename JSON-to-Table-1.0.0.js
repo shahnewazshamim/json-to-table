@@ -28,7 +28,7 @@
         table += '</table>';
 
         element.html(table);
-        
+
         $(selector + '.json-to-table tr:nth-child(1) td').each(function () {
             if ($(this).attr('colspan')) {
                 colCount += +$(this).attr('colspan');
@@ -56,10 +56,10 @@
 
             // TODO: please check css selector for consenting with "settings.showRowNumber"
             if (typeof settings.colWidth === 'function'){
-                for (var i = 0; i < colCount; i++) {
-                    let coldata = settings.colWidth(i, colCount, settings.tableWidth(), settings.showRowNumber);
+                for (var i = 1; i <= colCount; i++) {
+                    var colData = settings.colWidth(i-1, colCount, settings.tableWidth(), settings.showRowNumber);
                     $(selector + '.json-to-table tr td:nth-child(' + (settings.showRowNumber ? (i + 1) : i) + ')').css({
-                        width: coldata.value + coldata.type
+                        width: colData.value + colData.type
                     });
                 }
             } else if (settings.showRowNumber){
