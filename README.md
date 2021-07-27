@@ -113,6 +113,12 @@ Just call `createTable` method in your document ready function with your json `d
   
     **Ex:** `footerAlign: 'left'`
 
+- #### debug
+    Show all indexes on all cells
+    Default: false
+  
+    **Ex:** `debug: true`
+
 > **Every single value of these properties is similar to CSS property value.**
 
 - #### colsSameWidh
@@ -259,25 +265,42 @@ var data = [
              }
          ];
 
-    var parser = function(value) {
-                    if (String(value) == 'true')
-                        value = '✔';
-                    else if (String(value) == 'false')
-                        value = '-';
-                    else if (value == null)
-                        value = '';
-                    else if (value == 'Female')
-                        value = '👨🏻';
-                    else if (value == 'Male')
-                        value = '👩🏻';
-                    return value;
+        var parser = function(rowIdx, colIdx, value, isHead) {            
+                            if (String(value) == 'true')
+                              value = '✔';
+                            else if (String(value) == 'false')
+                              value = '-';
+                            else if (value == null)
+                              value = '';
+                            else if (String(value) == 'Male')
+                              value = '👨🏻';
+                            else if (String(value) == 'Female')
+                              value = '👩🏻';
+                            return (value);
+                      }
 
-    $('#table').createTable(data, { showTableHeaderCounter: true,
-                                    parser: parser,                                            
-                                    parserCols: ['gender','registered'],
-                                    colsSameWidh: false,
-                                    width: '80%'
-                                  });
+      $('#table').createTable(data, { 
+                                      //showTableHeader: false,
+                                      showTableRowNumber: true,
+                                      //rowNumberInitialValue: 101,
+                                      colsSameWidth: false,
+                                      width: '80%',
+                                      
+                                      parser: parser,
+                                      //parseHeader: true,
+                                      //parseRowNumber: true,                                      
+                                      //parserCols: ['registered'],
+
+                                      showTitle: true,                                      
+                                      titleText: 'My awesome table',
+                                      //titleAlign: 'left',
+
+                                      showFooter: true,
+                                      //footerText: 'My awesome footer',
+                                      footerAlign: 'right',
+
+                                      //debug: true
+                                    });
 ```
 
 
