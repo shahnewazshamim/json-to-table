@@ -7,7 +7,7 @@ to make your own datatable. This is an example to make an HTML table with JSON d
 
 ## Download
 #### Current Version
-Version 1.0.0
+Version 1.0.1
 
 You can download the [latest or current stable](https://github.com/shahnewazshamim/json-to-table/releases/latest) version
 from here (***recommended***) or download it form master branch (*not recommended*). 
@@ -26,10 +26,100 @@ Or **Development version** `JSON-to-Table.1.0.0.js`
 ## How to use
 Just call `createTable` method in your document ready function with your json `data` object.
 
-`$('your-selector').createTable(data);`
+`$('your-selector').createTable(data, optionsObject, parserFunction);`
 
-## Property Definition
+
+
+## Property (optionsObject) Definition
+
+> **Table properties**
+
+- #### showTableRowNumber
+    Display the first column as counter.
+    Default: false
+  
+    **Ex:** `showTableHeaderCounter: true`
+
+- #### rowNumberInitialValue
+    If you would like start with row number 9 set it. Otherwise let default as 1.
+    Default: 1
+
+    **Ex:** `rowNumberInitialValue: 101`
+
+- #### parser
+    Custom function to parse data values.
+    Default: none
+  
+    **Ex:** `parser: function(rowIdx, colIdx, value, isHead) { /* function scope */ return value; }`
+
+- #### parserCols
+    Array of columns names to execute the parser function. If ommited, the parser run on all fields.
+    Default: all cells, except header and rowNumbers.
+  
+    **Ex:** `parserCols: ['column1','column2']`
+
+- #### parseHeader
+    Enable parsing on header cells
+    Default: false
+  
+    **Ex:** `parseHeader: true`
+
+- #### parseRowNumber
+    Enable parsing on rowNumber cells
+    Default: false
+  
+    **Ex:** `parseRowNumber: true`
+
+- #### showTitle
+    Enable table title at the top
+    Default: false
+  
+    **Ex:** `showTitle: true`
+
+- #### titleText
+    Text to display in the title
+    Default: Will show the number of records. `'n records'`
+  
+    **Ex:** `titleText: 'My awesome table title'`
+
+- #### titleAlign
+    Set the alignment of the title. `('left' | 'center' | 'right')`
+    Default: 'center'
+  
+    **Ex:** `titleAlign: 'left'`
+
+- #### showFooter
+    Enable table footer at the bottom
+    Default: false
+  
+    **Ex:** `showFooter: true`
+
+- #### footerText
+    Text to display in the footer
+    Default: Will show the number of records. `'n records'`
+  
+    **Ex:** `footerText: 'My awesome table footer'`
+
+- #### footerAlign
+    Set the alignment of the footer. `('left' | 'center' | 'right')`
+    Default: 'center'
+  
+    **Ex:** `footerAlign: 'left'`
+
 > **Every single value of these properties is similar to CSS property value.**
+
+- #### colsSameWidh
+    Set all table columns with same widht
+    Default: false
+
+    **Ex:** `colsSameWidh: true
+
+- #### width
+    Set table width. Any css unit can be used like '%', 'px', 'em'
+    Default: '100%'
+
+    **Ex:** `width: '1200px'`
+
 - #### borderWidth
     Defines to control table and it's all rows and columns border width.
   
@@ -116,6 +206,75 @@ Just call `createTable` method in your document ready function with your json `d
     **Ex:** `tdPaddingRight: '10px'`
 
 ## Examples
+
+##### Use custom parser
+```javascript
+var data = [
+             {
+               "id": 1123,
+               "first_name": "Alli",
+               "last_name": "Cassey",
+               "email": "acassey0@list-manage.com",
+               "gender": "Female",
+               "registered": false
+             },
+             {
+               "id": 1124,
+               "first_name": "Clyde",
+               "last_name": "Bromage",
+               "email": "cbromage1@bbb.org",
+               "gender": "Male",
+               "registered": true
+             },
+             {
+               "id": 1125,
+               "first_name": "Janeczka",
+               "last_name": "Trett",
+               "email": "jtrett2@vistaprint.com",
+               "gender": "Female",
+               "registered": null
+             },
+             {
+               "id": 1126,
+               "first_name": "Kristoforo",
+               "last_name": "Duplain",
+               "email": "kduplain3@vimeo.com",
+               "gender": "Male",
+               "registered": true
+             },
+             {
+               "id": 1127,
+               "first_name": "Devonna",
+               "last_name": "Medeway",
+               "email": "dmedeway4@google.nl",
+               "gender": "Female",
+               "registered": false
+             }
+         ];
+
+    var parser = function(value) {
+                    if (String(value) == 'true')
+                        value = '✔';
+                    else if (String(value) == 'false')
+                        value = '-';
+                    else if (value == null)
+                        value = '';
+                    else if (value == 'Female')
+                        value = '👨🏻';
+                    else if (value == 'Male')
+                        value = '👩🏻';
+                    return value;
+
+    $('#table').createTable(data, { showTableHeaderCounter: true,
+                                    parser: parser,                                            
+                                    parserCols: ['gender','registered'],
+                                    colsSameWidh: false,
+                                    width: '80%'
+                                  });
+```
+
+
+
 
 ##### Using a JSON data from your JS variable.
 ```javascript
