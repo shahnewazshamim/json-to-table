@@ -3,30 +3,37 @@ JSON Data To HTML Table is Example of Lightweight jQuery Plugin for Beginners.
 Though this is not a datatable, you can modify this plugin and customize it 
 to make your own datatable. This is an example to make an HTML table with JSON data.
 
-![alt text](https://github.com/shahnewazshamim/json-to-table/blob/master/screenshot.png "JSON to HTML Table")
+![alt text](https://github.com/philmottin/json-to-table/blob/master/screenshot.png "JSON to HTML Table")
+![alt text](https://github.com/philmottin/json-to-table/blob/master/screenshot_parser.png "JSON to HTML Parse Table")
 
 ## Download
 #### Current Version
 Version 1.0.1
 
-You can download the [latest or current stable](https://github.com/shahnewazshamim/json-to-table/releases/latest) version
+This project was forked from `https://github.com/shahnewazshamim/json-to-table` to include new features.
+
+You can download the [latest or current stable](https://github.com/philmottin/json-to-table/releases/latest) version
 from here (***recommended***) or download it form master branch (*not recommended*). 
-> `https://github.com/shahnewazshamim/json-to-table/archive/master.zip`  
+> `https://github.com/philmottin/json-to-table/archive/refs/heads/master.zip`  
 
 Git Clone:
-> `https://github.com/shahnewazshamim/json-to-table.git`  
+> `https://github.com/philmottin/json-to-table.git`  
 
 ## Installation
-Using **Production version** `JSON-to-Table.min.1.0.0.js` 
+1- Add jQuery 
 > `<script src="jQuery-3.2.1.min.js"></script>`
 
-Or **Development version** `JSON-to-Table.1.0.0.js`
-> `<script src="JSON-to-Table.min.1.0.0.js"></script>`
+2- Add JSON-to-Table pluging
+Using **Production version** `JSON-to-Table.min.1.0.1.js` 
+> `<script src="JSON-to-Table.min.1.0.1.js"></script>`
+
+Or **Development version** `JSON-to-Table-1.0.1.js`
+> `<script src="JSON-to-Table-1.0.1.js"></script>`
 
 ## How to use
 Just call `createTable` method in your document ready function with your json `data` object.
 
-`$('your-selector').createTable(data, optionsObject, parserFunction);`
+`$('your-selector').createTable(data, optionsObject);`
 
 
 
