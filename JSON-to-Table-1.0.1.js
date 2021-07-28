@@ -99,7 +99,7 @@
             $.each(data[0], function (key, value) { 
                 if ($.fn.createTable.isFunction(settings.parser)) {
                     settings.parserCols = Array.isArray(settings.parserCols) ? settings.parserCols : [];
-                    key = settings.parseHeader ? settings.parser(0, iColHeader, key, thead) : key;
+                    key = settings.parseHeader ? settings.parser(0, iColHeader, key, true) : key;
                 }
                 iColHeader++;
                 table += '<th>' + $.fn.humanize(key) + '</th>';
@@ -111,7 +111,7 @@
         for (var i = 0; i < data.length; i++) {
             if ($.fn.createTable.isFunction(settings.parser)) {
                 settings.parserCols = Array.isArray(settings.parserCols) ? settings.parserCols : [];
-                value = settings.parseRowNumber ? settings.parser(i+1, 0, settings.rowNumberInitialValue + i, thead) : settings.rowNumberInitialValue + i;
+                value = settings.parseRowNumber ? settings.parser(i+1, 0, settings.rowNumberInitialValue + i, false) : settings.rowNumberInitialValue + i;
             }
             table += settings.showTableRowNumber ? ('<tr><td class="jsl">'+(value)+'</td>') : '<tr>';
             
@@ -119,12 +119,12 @@
             $.each(data[i], function (key, value) {
                 if ($.fn.createTable.isFunction(settings.parser)) {
                     settings.parserCols = Array.isArray(settings.parserCols) ? settings.parserCols : [];
-                    value = (settings.parserCols.includes(key) || settings.parserCols.length == 0) ? settings.parser(i+1, iCol, value, thead) : value;
+                    value = (settings.parserCols.includes(key) || settings.parserCols.length == 0) ? settings.parser(i+1, iCol, value, false) : value;
                 }
                 iCol++;
                 table += '<td>' + value + '</td>';
             });
-            if (thead === false) table += '</tr>';
+            table += '</tr>';
         }
         table += '</tbody>';
         table += '</table>';
