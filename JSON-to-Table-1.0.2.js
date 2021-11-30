@@ -112,6 +112,8 @@
             if ($.fn.createTable.isFunction(settings.parser)) {
                 settings.parserCols = Array.isArray(settings.parserCols) ? settings.parserCols : [];
                 value = settings.parseRowNumber ? settings.parser(i+1, 0, settings.rowNumberInitialValue + i, false) : settings.rowNumberInitialValue + i;
+            } else { //fix error when showTableRowNumber is true and no parser is present. missing value.
+                value = settings.rowNumberInitialValue + i;
             }
             table += settings.showTableRowNumber ? ('<tr><td class="jsl">'+(value)+'</td>') : '<tr>';
             

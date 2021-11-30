@@ -45,7 +45,7 @@ Just call `createTable` method in your document ready function with your json `d
     Display the first column as counter.
     Default: false
   
-    **Ex:** `showTableHeaderCounter: true`
+    **Ex:** `showTableRowNumber: true`
 
 - #### rowNumberInitialValue
     If you would like start with row number 9 set it. Otherwise let default as 1.
