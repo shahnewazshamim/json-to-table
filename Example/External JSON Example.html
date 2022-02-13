@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON Data To HTML Table - jQuery Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans+Condensed:300|Open+Sans:300"
+          rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #08090d;
+            text-align: center;
+        }
+
+        h1 span {
+            font-size: 25px;
+            color: #477dd7;
+        }
+
+        h2 {
+            font-family: "Open Sans Condensed", sans-serif;
+            font-size: 18px;
+        }
+
+        .margin-bottom {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>JSON Data To HTML Table - <span>An Example of Lightweight jQuery Plugin for Beginners</span></h1>
+<h2>External JSON data file Example</h2>
+<h4>⚠ Must run vai web server. CORS policy won't allow to load data locally.</h4>
+<div class="table margin-bottom"></div>
+
+<script src="jQuery-3.2.1.min.js"></script>
+<script src="../JSON-to-Table.min.1.0.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $.getJSON("sample-data.json", function (data) {
+            $('.table').createTable(data, {
+                // General Style for Table
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: '#DDDDDD',
+                fontFamily: 'Verdana, Helvetica, Arial, FreeSans, sans-serif',
+
+                // Table Header Style
+                thBg: '#F3F3F3',
+                thColor: '#0E0E0E',
+                thHeight: '30px',
+                thFontFamily: '"Open Sans Condensed", sans-serif',
+                thFontSize: '14px',
+                thTextTransform: 'capitalize',
+
+                // Table Body/Row Style
+                trBg: '#FFFFFF',
+                trColor: '#0E0E0E',
+                trHeight: '25px',
+                trFontFamily: '"Open Sans", sans-serif',
+                trFontSize: '13px',
+
+                // Table Body's Column Style
+                tdPaddingLeft: '10px',
+                tdPaddingRight: '10px'
+            });
+        });       
+    });
+</script>
+</body>
+</html>
